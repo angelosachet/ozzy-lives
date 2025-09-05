@@ -32,7 +32,7 @@ echo Verificando se o Docker esta instalado...
 docker -v >nul 2>&1
 IF %ERRORLEVEL% NEQ 0 (
     echo Docker nao encontrado. Baixando e instalando...
-    powershell -Command "Invoke-WebRequest -Uri https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe -OutFile DockerInstaller.exe"
+    powershell -Command "Invoke-WebRequest -Uri 'https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe' -OutFile 'DockerInstaller.exe' -Headers @{ 'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }"
     start /wait DockerInstaller.exe install --quiet
     del DockerInstaller.exe
     echo Docker Desktop instalado com sucesso!
