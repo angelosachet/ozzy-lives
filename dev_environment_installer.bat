@@ -88,6 +88,8 @@ echo ==========================================
 echo   Installing Node.js
 echo ==========================================
 
+
+
 node --version >nul 2>&1
 IF %ERRORLEVEL% EQU 0 (
     echo Node.js is already installed.
